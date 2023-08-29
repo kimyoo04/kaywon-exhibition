@@ -1,12 +1,14 @@
-import { useMemo } from 'react';
-import { useCounter } from '@/hooks/useCounter';
+import { useMemo } from "react"
+import { useCounter } from "@/hooks/useCounter"
 
 const Main = () => {
-  const { count, increment } = useCounter();
+  const { count, increment } = useCounter()
 
-  const env: 'development' | 'production' = useMemo(() => {
-    return import.meta.env.VITE_TEST || process.env.NODE_ENV === 'test' ? 'development' : 'production';
-  }, []);
+  const env: "development" | "production" = useMemo(() => {
+    return import.meta.env.VITE_TEST || process.env.NODE_ENV === "test"
+      ? "development"
+      : "production"
+  }, [])
 
   return (
     <>
@@ -16,7 +18,7 @@ const Main = () => {
         count is: {count}
       </button>
     </>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main

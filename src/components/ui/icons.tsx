@@ -24,8 +24,7 @@ import {
   Twitter,
   User,
   X,
-} from "lucide-react";
-
+} from "lucide-react"
 
 export const Icons = {
   logo: (props: LucideProps) => (
@@ -155,4 +154,4 @@ export const Icons = {
       />
     </svg>
   ),
-};
+}
