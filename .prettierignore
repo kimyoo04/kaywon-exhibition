@@ -1,0 +1,11 @@
+node_modules/
+public/
+dist/
+.vscode/
+.husky/
+.github/
+package*.json
+yarn.lock
+vite.config.js
+postcss.config.js
+tailwind.config.js

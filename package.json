@@ -1,0 +1,111 @@
+{
+  "name": "kaywon-exhibition",
+  "description": "",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "exhibition"
+  ],
+  "author": "kimyoo04 <kimyoo04eco@naver.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimyoo04/kaywon-exhibition.git"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.1",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-alert-dialog": "^1.0.4",
+    "@radix-ui/react-aspect-ratio": "^1.0.3",
+    "@radix-ui/react-avatar": "^1.0.3",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-context-menu": "^2.1.4",
+    "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-dropdown-menu": "^2.0.5",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-menubar": "^1.0.3",
+    "@radix-ui/react-popover": "^1.0.6",
+    "@radix-ui/react-scroll-area": "^1.0.4",
+    "@radix-ui/react-select": "^1.2.2",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-toast": "^1.1.4",
+    "@radix-ui/react-tooltip": "^1.0.6",
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.5.0",
+    "axios-extensions": "^3.1.6",
+    "class-variance-authority": "^0.7.0",
+    "classnames": "^2.3.2",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
+    "immer": "^10.0.2",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.270.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.15.0",
+    "react-hook-form": "^7.45.4",
+    "react-player": "^2.12.0",
+    "react-redux": "^8.1.2",
+    "redux": "^4.2.1",
+    "sharp": "^0.32.5",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "9.3.1",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/react-hooks": "8.0.1",
+    "@testing-library/user-event": "14.4.3",
+    "@types/jest": "29.5.4",
+    "@types/node": "20.5.7",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "6.5.0",
+    "@typescript-eslint/parser": "6.5.0",
+    "@vitejs/plugin-react": "4.0.4",
+    "@vitest/ui": "0.34.3",
+    "autoprefixer": "^10.4.15",
+    "babel-polyfill": "6.26.0",
+    "core-js": "3.32.1",
+    "eslint": "8.48.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "5.0.0",
+    "husky": "8.0.3",
+    "jsdom": "22.1.0",
+    "lint-staged": "14.0.1",
+    "postcss": "^8.4.28",
+    "prettier": "3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "tailwindcss": "^3.3.3",
+    "typescript": "5.2.2",
+    "vite": "4.4.9",
+    "vite-plugin-checker": "0.6.2",
+    "vite-plugin-html": "3.2.0",
+    "vite-tsconfig-paths": "4.2.0",
+    "vitest": "0.34.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "packageManager": "yarn@4.0.0-rc.18"
+}
