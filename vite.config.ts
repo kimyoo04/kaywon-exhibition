@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, 'env');
 
   return {
-    server: { hmr: true },
+    server: { hmr: true, port:3000 },
     plugins: [
       react({
         include: ['**/*.tsx', '**/*.ts'],
