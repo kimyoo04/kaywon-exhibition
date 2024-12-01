@@ -1,0 +1,29 @@
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 100,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "importOrder": [
+    "^react$",
+    "",
+    "^@/app(.*)$",
+    "",
+    "^@/config(.*)$",
+    "",
+    "^@/entities(.*)$",
+    "",
+    "^@/features(.*)$",
+    "",
+    "^@/modules(.*)$",
+    "",
+    "^@/pages(.*)$",
+    "",
+    "^@/shared(.*)$",
+    "",
+    "^[../]",
+    "",
+    "^[./]"
+  ]
+}
