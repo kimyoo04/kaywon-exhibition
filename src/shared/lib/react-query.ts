@@ -1,10 +1,12 @@
 import { DefaultOptions, UseMutationOptions } from '@tanstack/react-query'
 
+import { isProd } from '@/shared/utils/common'
+
 export const queryConfig = {
   queries: {
     // throwOnError: true,
     refetchOnWindowFocus: false,
-    retry: false,
+    retry: isProd(process.env.NODE_ENV) ? 3 : false,
     staleTime: 1000 * 60,
   },
 } satisfies DefaultOptions

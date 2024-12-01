@@ -16,6 +16,8 @@ import { TanstackProvider } from '@/app/providers/tanstack-provider'
 import { ThemeProvider } from '@/app/providers/theme-provider'
 
 import { MainErrorFallback } from '@/shared/components/errors/main'
+import MonitoringInitializer from '@/shared/components/monitoring-initializer'
+import { PageViewTracker } from '@/shared/components/page-tracker'
 import { Toaster } from '@/shared/components/ui/sonner'
 
 export const metadata: Metadata = {
@@ -41,7 +43,7 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children?: React.ReactNode
@@ -53,21 +55,28 @@ export default function RootLayout({
   return (
     <html lang={language} suppressHydrationWarning>
       <body className={cn('font-sans antialiased')}>
-        <ErrorBoundary FallbackComponent={MainErrorFallback}>
-          <ThemeProvider value={{ theme }}>
-            <TanstackProvider>
-              <LazyMotion strict features={domAnimation}>
-                <div id="__next" className="relative flex min-h-screen flex-col">
-                  {children}
-                </div>
+        <MonitoringInitializer />
+
+        <ThemeProvider value={{ theme }}>
+          <TanstackProvider>
+            <LazyMotion strict features={domAnimation}>
+              <ErrorBoundary FallbackComponent={MainErrorFallback}>
+                {/* <SessionProvider session={session}> */}
+                {/* <AuthSessionLoader> */}
+                {children}
+                <div id="__next" className="relative flex min-h-screen flex-col"></div>
 
                 <Toaster richColors closeButton />
+
                 {process.env.NODE_ENV === 'development' ? <TailwindIndicator /> : null}
                 {process.env.NODE_ENV === 'production' ? <Analytics /> : null}
-              </LazyMotion>
-            </TanstackProvider>
-          </ThemeProvider>
-        </ErrorBoundary>
+                {process.env.NODE_ENV === 'production' ? <PageViewTracker /> : null}
+                {/* </AuthSessionLoader> */}
+                {/* </SessionProvider> */}
+              </ErrorBoundary>
+            </LazyMotion>
+          </TanstackProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

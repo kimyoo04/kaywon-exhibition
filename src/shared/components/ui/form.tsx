@@ -18,20 +18,20 @@ import { cn } from '@/shared/utils'
 const Form = FormProvider
 
 type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  FieldValuesT extends FieldValues = FieldValues,
+  NameT extends FieldPath<FieldValuesT> = FieldPath<FieldValuesT>,
 > = {
-  name: TName
+  name: NameT
 }
 
 const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue)
 
 const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  FieldValuesT extends FieldValues = FieldValues,
+  NameT extends FieldPath<FieldValuesT> = FieldPath<FieldValuesT>,
 >({
   ...props
-}: ControllerProps<TFieldValues, TName>) => {
+}: ControllerProps<FieldValuesT, NameT>) => {
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
